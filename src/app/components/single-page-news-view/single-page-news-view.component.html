@@ -1,0 +1,17 @@
+<div class="container">
+    <h3>{{ news.title }}</h3>
+    {{ news.date }} <hr><br>
+    <div>
+        {{ news.details }}
+    </div>
+    <a [routerLink]="['']">
+        <app-button 
+            color='green'
+            text='Home'>
+        </app-button>
+    </a>
+    
+    <div>
+        {{ news.comment }}
+    </div>
+</div>

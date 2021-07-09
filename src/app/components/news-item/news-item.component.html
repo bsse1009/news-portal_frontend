@@ -1,0 +1,9 @@
+<a [routerLink]="['/details']" [queryParams]="{'id': news.id}">
+<div  class="news" (click)="onClick(news)">
+    <h3>
+        {{ news.title }}
+        <!-- <fa-icon [ngStyle]="{color: 'red'}" [icon]="faTimes" (click)="onDelete(task)"></fa-icon> -->
+    </h3>
+    <p>{{ news.date }}</p>
+</div>
+</a>
