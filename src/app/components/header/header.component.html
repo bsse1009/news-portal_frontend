@@ -1,18 +1,21 @@
 <header>
     <h1>{{ title }}</h1>
     <app-search-bar></app-search-bar>
-    <a [routerLink]="[isLogin?'home':'login']">
-        <app-button  
-            color="{{ isLogin ? 'red' : 'green' }}"
-            text="{{ isLogin ? 'Logout' : 'Login' }}" 
-        ></app-button> 
-    </a>
+    <div *ngIf = "isLogedIn(); else login">
+        <a [routerLink]="['home']">
+            <app-button   
+                color='red'
+                text='Logout'
+                (btnClick)="logOut()"
+            ></app-button> 
+        </a>
+    </div>
+    <ng-template #login>
+        <a [routerLink]="['login']">
+            <app-button color='green' text='login'>
+            </app-button>
+        </a>
+    </ng-template>
 </header>
 
-
-
-<!-- <ul class="nav navbar-nav">
-<li>
-<li><a [routerLink]="" (click)="logout()">Log out</a></li>
-</ul> -->
  

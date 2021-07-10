@@ -15,7 +15,7 @@ export class AuthGuardService {
     if (!this.authService.isUserLoggedIn()) {
       alert('You are not allowed to view this page. You are redirected to login Page');
 
-      this.router.navigate(["login"], { queryParams: { retUrl: route.url } });
+      this.router.navigate(["login"], { queryParams: { retUrl: state.url } });
       return false;
 
       //var urlTree = this.router.createUrlTree(['login']);
