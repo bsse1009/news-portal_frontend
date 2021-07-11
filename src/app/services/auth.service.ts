@@ -1,43 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable, of } from "rxjs";
+import { of } from "rxjs";
+import { UserService } from "../services/user.service";
 import { User } from "../User";
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isloggedIn: boolean;
-  userName: string;
-  apiUrl: string = 'http://localhost:5000/users';
-
-  constructor(private http: HttpClient) { }
-
-  getUser(id: any): Observable<User> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<User>(url);
-  }
+  isloggedIn: boolean = false;
+  userType: string;
+  users: User[] = [];
+  
+  constructor(private _userService: UserService) { }
 
   login(username: string, password: string) {
-
-    //Assuming users are provided the correct credentials.
-    //In real app you will query the database to verify.
-    this.isloggedIn = true;
-    this.userName = username;
+    this._userService.getUsers().subscribe((users)=> this.users = users);
+    for (let i = 0; i < this.users.length; i++) {
+      const user = this.users[i];
+      const name = user.name;
+      const pass = user.password;
+      if(username == name && password == pass)
+      {
+        this.isloggedIn = true;
+        this.userType = user.type;
+        break;
+      }
+    }
+    if (!this.isloggedIn) {
+      alert("please enter valid user name and password!")
+    }
     return of(this.isloggedIn);
   }
+
   isUserLoggedIn(): boolean {
     return this.isloggedIn;
   }
 
   isAdminUser(): boolean {
-    if (this.userName == 'Admin') {
+    if (this.userType == 'Admin') {
       return true;
     }
     return false;

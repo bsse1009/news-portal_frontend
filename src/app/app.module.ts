@@ -16,6 +16,7 @@ import { NewsItemComponent } from './components/news-item/news-item.component';
 import { SinglePageNewsViewComponent } from './components/single-page-news-view/single-page-news-view.component';
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   { path: '', component: NewsComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     NewsComponent,
     NewsItemComponent,
     SinglePageNewsViewComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
