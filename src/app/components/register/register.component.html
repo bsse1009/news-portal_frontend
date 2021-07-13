@@ -1,1 +1,15 @@
-<p>register works!</p>
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="name" id="name" placeholder="Your Name" />
+    </div>
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" name="email" [(ngModel)]="email" id="email" placeholder="Email" />
+    </div>
+    <div class="form-control">
+        <label for="password">Enter Password</label>
+        <input type="password" name="password" [(ngModel)]="password" id="password" />
+    </div>
+    <input type="submit" value="Register User" class="btn btn-block" />
+</form>

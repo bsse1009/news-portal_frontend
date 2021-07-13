@@ -17,14 +17,18 @@ import { SinglePageNewsViewComponent } from './components/single-page-news-view/
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 const appRoutes: Routes = [
   { path: '', component: NewsComponent },
   { path: 'home', component: NewsComponent },
-  { path: 'details', component: SinglePageNewsViewComponent, canActivate: [AuthGuardService] },
+  { path: 'details', component: SinglePageNewsViewComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
+
+// , canActivate: [AuthGuardService]
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ const appRoutes: Routes = [
     NewsItemComponent,
     SinglePageNewsViewComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

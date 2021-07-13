@@ -10,8 +10,20 @@
             text='Home'>
         </app-button>
     </a>
-    
-    <div>
-        {{ news.comment }}
+    <hr>
+    <div *ngIf='isLogin'>
+        <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+            <input type="text" name="comment" ngModel>
+            <app-button
+                color='green'
+                text='Comment'
+            ></app-button>
+        </form>
+    </div>
+    <div *ngFor="let comment of news.comment">
+        <div>{{ comment.username }}
+            {{comment.time}}
+        </div>
+        <div>{{ comment.text }}</div><hr>
     </div>
 </div>

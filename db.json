@@ -1,43 +1,81 @@
 {
-    "News": [
+  "News": [
+    {
+      "id": 1,
+      "title": "Brazil beat Peru 1-0 to move into Copa America final",
+      "date": "May 5th at 2:30pm",
+      "details": "Brazil reached the Copa America final after a first-half goal from Lucas Paqueta <br> -- his second in two games -- gave them a 1-0 win over Peru on Monday.",
+      "image": "1.png",
+      "comment": [
         {
-            "id": 1,
-            "title": "Brazil beat Peru 1-0 to move into Copa America final",
-            "date": "May 5th at 2:30pm",
-            "details": "Brazil reached the Copa America final after a first-half goal from Lucas Paqueta <br> -- his second in two games -- gave them a 1-0 win over Peru on Monday.",
-            "image":"1.png"
+          "username": "ibrahim khalil",
+          "time": "5-5-2021",
+          "text": "1234"
         },
         {
-            "id": 2,
-            "title": "Barty survives Krejcikova test to finally reach Wimbledon quarters",
-            "date": "JULY 6, 2021 8:47:32 AM",
-            "details": "Long tipped as a future Wimbledon champion, the Australian world No. 1 has had to wait nine long years since making her debut in 2012 to finally put herself in the last-eight mix at the grasscourt major.",
-            "image": "2.png"
-        },
-        {
-            "id": 3,
-            "title": "Euro 2020: Luke Shaw emerges from hurt, humiliation",
-            "date": "JULY 6, 2021 10:02:49 AM",
-            "details": "Manchester United left-back survives Jose Mourinho's ‘tough love’, double leg break to star for England at the ongoing UEFA Euro 2020.",
-            "image": "3.png"
-        },
-        {
-            "id": 4,
-            "title": "Copa America: Argentina trusting Messi to find answer to Ospina’s Colombia",
-            "date": "JULY 6, 2021 10:59:10 AM",
-            "details": "Beat the impressive Ospina and Colombia, and Argentina will take on Brazil in Saturday's decider. The hosts beat Peru 1-0 on Monday and star Neymar ended a news conference by saying he wanted to face Argentina in the final.",
-            "image": "4.png"
+          "username": "Ibrahim Khalil",
+          "time": "14-07-2021 12:35:36 AM",
+          "text": "Nice job brazil!!"
         }
-
-    ],
-
-    "users":[
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Barty survives Krejcikova test to finally reach Wimbledon quarters",
+      "date": "JULY 6, 2021 8:47:32 AM",
+      "details": "Long tipped as a future Wimbledon champion, the Australian world No. 1 has had to wait nine long years since making her debut in 2012 to finally put herself in the last-eight mix at the grasscourt major.",
+      "image": "2.png",
+      "comment": [
         {
-            "id":1,
-            "name": "Ibrahim Khalil",
-            "email": "bsse1009@iit.du.ac.bd",
-            "password": 1234,
-            "type": "admin"
+          "userName": "",
+          "time": "",
+          "text": "sss"
         }
-    ]
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Euro 2020: Luke Shaw emerges from hurt, humiliation",
+      "date": "JULY 6, 2021 10:02:49 AM",
+      "details": "Manchester United left-back survives Jose Mourinho's ‘tough love’, double leg break to star for England at the ongoing UEFA Euro 2020.",
+      "image": "3.png",
+      "comment": [
+        {
+          "userName": "",
+          "time": "",
+          "text": "sss"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Copa America: Argentina trusting Messi to find answer to Ospina’s Colombia",
+      "date": "JULY 6, 2021 10:59:10 AM",
+      "details": "Beat the impressive Ospina and Colombia, and Argentina will take on Brazil in Saturday's decider. The hosts beat Peru 1-0 on Monday and star Neymar ended a news conference by saying he wanted to face Argentina in the final.",
+      "image": "4.png",
+      "comment": [
+        {
+          "userName": "",
+          "time": "",
+          "text": "sss"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ibrahim Khalil",
+      "email": "bsse1009@iit.du.ac.bd",
+      "password": "1234",
+      "type": "admin"
+    },
+    {
+      "name": "Ahmed Ryan",
+      "email": "bsse1011@iit.du.ac.bd",
+      "password": "1234",
+      "type": "user",
+      "id": 2
+    }
+  ]
 }

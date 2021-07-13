@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  invalidCredentialMsg: string;
+  // isLogin: boolean;
   username: string;
   password: string;
   retUrl: any;
@@ -30,13 +30,15 @@ export class LoginComponent implements OnInit {
   }
 
   onFormSubmit(loginForm: any) {
+    console.log('hey ', loginForm.value.username, loginForm.value.password);
     this.authService.login(loginForm.value.username, loginForm.value.password).subscribe(data => {
-      if (this.retUrl != null) {
+      if (this.retUrl != null && data) {
         this.router.navigateByUrl(this.retUrl);
       } else {
         this.router.navigate(['login']);
       }
     });
+
   }
 
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { News } from "../News";
+import { Comment } from "../Comment";
 
 
 const httpOptions = {
@@ -26,5 +27,11 @@ export class NewsService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<News>(url);
   }
+
+  updateNews(news: News): Observable<News> {
+    const url = `${this.apiUrl}/${news.id}`;
+    return this.http.put<News>(url, news, httpOptions);
+  }
+
 
 }

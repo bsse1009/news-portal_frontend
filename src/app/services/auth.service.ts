@@ -9,13 +9,18 @@ import { User } from "../User";
 })
 export class AuthService {
   isloggedIn: boolean = false;
+  username: string;
   userType: string;
   users: User[] = [];
   
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService) { 
+    this._userService.getUsers().subscribe((users) => {
+      console.log(users);
+      this.users = users;
+    });
+  }
 
   login(username: string, password: string) {
-    this._userService.getUsers().subscribe((users)=> this.users = users);
     for (let i = 0; i < this.users.length; i++) {
       const user = this.users[i];
       const name = user.name;
@@ -24,11 +29,12 @@ export class AuthService {
       {
         this.isloggedIn = true;
         this.userType = user.type;
+        this.username = username;
         break;
       }
     }
     if (!this.isloggedIn) {
-      alert("please enter valid user name and password!")
+      alert("please enter valid user name and password!");
     }
     return of(this.isloggedIn);
   }

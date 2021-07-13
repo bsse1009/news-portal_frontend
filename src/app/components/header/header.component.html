@@ -11,10 +11,16 @@
         </a>
     </div>
     <ng-template #login>
-        <a [routerLink]="['login']">
-            <app-button color='green' text='login'>
-            </app-button>
-        </a>
+        <div>
+            <a [routerLink]="['login']" *ngIf="hasRoute('/register')">
+                <app-button color='green' text='login'>
+                </app-button>
+            </a>
+            <a [routerLink]="['register']" *ngIf="hasRoute('/login')">
+                <app-button color='green' text='Register'>
+                </app-button>
+            </a>
+        </div>
     </ng-template>
 </header>
 
