@@ -17,4 +17,8 @@ export class NewsComponent implements OnInit {
     this.newsService.getNewses().subscribe((newses)=> this.newses = newses);
   }
 
+  addNews(news: News) {
+    this.newsService.addNews(news).subscribe((news) => this.newses.push(news));
+  }
+
 }

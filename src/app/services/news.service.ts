@@ -33,5 +33,9 @@ export class NewsService {
     return this.http.put<News>(url, news, httpOptions);
   }
 
+  addNews(news: News): Observable<News> {
+    return this.http.post<News>(this.apiUrl, news, httpOptions);
+  }
+
 
 }

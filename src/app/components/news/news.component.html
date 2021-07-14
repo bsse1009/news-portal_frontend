@@ -1,3 +1,5 @@
+<app-add-news (onAddNews)="addNews($event)"></app-add-news>
+
 <app-news-item
     *ngFor="let news of newses" 
     [news]="news" 

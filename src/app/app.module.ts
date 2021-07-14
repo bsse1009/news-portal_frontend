@@ -4,8 +4,6 @@ import { HttpClientModule, } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuardService } from "./services/auth-guard.service";
-
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,17 +16,15 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { AddNewsComponent } from './components/add-news/add-news.component';
 
 const appRoutes: Routes = [
   { path: '', component: NewsComponent },
-  { path: 'home', component: NewsComponent },
   { path: 'details', component: SinglePageNewsViewComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
-
-// , canActivate: [AuthGuardService]
 
 @NgModule({
   declarations: [
@@ -41,7 +37,8 @@ const appRoutes: Routes = [
     SinglePageNewsViewComponent,
     LoginComponent,
     RegisterComponent,
-    CommentComponent
+    CommentComponent,
+    AddNewsComponent
   ],
   imports: [
     BrowserModule,

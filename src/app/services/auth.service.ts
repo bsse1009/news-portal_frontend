@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   isAdminUser(): boolean {
-    if (this.userType == 'Admin') {
+    if (this.userType == 'admin') {
       return true;
     }
     return false;

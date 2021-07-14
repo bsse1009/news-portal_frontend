@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.retUrl = this.activatedRoute.snapshot.queryParams['retUrl'] || 'home';
+    this.retUrl = this.activatedRoute.snapshot.queryParams['retUrl'] || '/';
 
     // this.activatedRoute.queryParamMap
     //   .subscribe(params => {

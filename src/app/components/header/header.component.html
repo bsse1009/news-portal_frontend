@@ -2,13 +2,14 @@
     <h1>{{ title }}</h1>
     <app-search-bar></app-search-bar>
     <div *ngIf = "isLogedIn(); else login">
-        <a [routerLink]="['home']">
-            <app-button   
-                color='red'
-                text='Logout'
-                (btnClick)="logOut()"
-            ></app-button> 
-        </a>
+        <div>
+            <app-button *ngIf="isAdmin && hasRoute('/')" color="{{ showAddNews ? 'red' : 'green' }}"
+                text="{{ showAddNews ? 'Close' : 'Add News' }}" (btnClick)="toogleAddNews()"></app-button>
+            
+            <a [routerLink]="['/']">
+                <app-button color='red' text='Logout' (btnClick)="logOut()"></app-button>
+            </a>
+        </div>
     </div>
     <ng-template #login>
         <div>

@@ -24,7 +24,7 @@ export class SinglePageNewsViewComponent implements OnInit {
       private newsService: NewsService,
       private auth: AuthService
     ) {
-    this.time = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US');
+        this.time = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US');
      }
 
   ngOnInit(): void {

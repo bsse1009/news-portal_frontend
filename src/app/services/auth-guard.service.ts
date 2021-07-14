@@ -17,11 +17,14 @@ export class AuthGuardService {
 
       this.router.navigate(["login"], { queryParams: { retUrl: state.url } });
       return false;
-
-      //var urlTree = this.router.createUrlTree(['login']);
-      //return urlTree;
     }
 
+    if (!this.authService.isAdminUser()) {
+      alert('You are not allowed to view this page. Please login as admin');
+
+      this.router.navigate(["login"], { queryParams: { retUrl: state.url } });
+      return false;
+    }
     return true;
   }
 }
