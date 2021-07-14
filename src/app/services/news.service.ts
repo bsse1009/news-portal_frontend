@@ -37,5 +37,10 @@ export class NewsService {
     return this.http.post<News>(this.apiUrl, news, httpOptions);
   }
 
+  deleteNews(news: News): Observable<News> {
+    const url = `${this.apiUrl}/${news.id}`;
+    return this.http.delete<News>(url);
+  }
+
 
 }

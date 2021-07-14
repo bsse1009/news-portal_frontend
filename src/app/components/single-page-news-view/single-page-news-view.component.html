@@ -5,25 +5,27 @@
     </a>
 </div>
 <div class="container">
-    <h3>{{ news.title }}</h3>
-    {{ news.date }} <hr><br>
-    <div>
+    <h3 class="title">{{ news.title }}</h3>
+    <div class="date"><small>{{ news.date }}</small></div>
+     <hr><br>
+    <div class="text-body">
         {{ news.details }}
-    </div>
-    <hr>
+    </div> <br>
     <div *ngIf='isLogin'>
-        <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
-            <input type="text" name="comment" ngModel>
-            <app-button
-                color='green'
-                text='Comment'
-            ></app-button>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-control">
+                <label for="comment">Comment</label>
+                <div class="addcomment">
+                    <input type="text" name="comment" [(ngModel)]="comment" id="comment" placeholder="Add Comment" />
+                    <app-button color='green' text='Comment'></app-button>
+                </div>
+            </div>
         </form>
-    </div>
-    <div *ngFor="let comment of news.comment">
-        <div>{{ comment.username }}
-            {{comment.time}}
+    </div><br>
+    <div *ngFor="let comment of news.comment" class="container-comment">
+        <div><b>{{ comment.username }}</b> <br>
+            <small>{{comment.time}}</small>
         </div>
-        <div>{{ comment.text }}</div><hr>
+        <div class="text">{{ comment.text }}</div><hr>
     </div>
 </div>

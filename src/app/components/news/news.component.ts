@@ -21,4 +21,14 @@ export class NewsComponent implements OnInit {
     this.newsService.addNews(news).subscribe((news) => this.newses.push(news));
   }
 
+  deleteNews(news: News){
+    this.newsService
+      .deleteNews(news)
+      .subscribe(
+        () => this.newses = this.newses.filter(
+          (t) => t.id !== news.id
+        )
+      );
+  }
+
 }

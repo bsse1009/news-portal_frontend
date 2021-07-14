@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { News } from "../../News";
+import { AuthService } from "../../services/auth.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news-item',
@@ -9,15 +11,26 @@ import { News } from "../../News";
 export class NewsItemComponent implements OnInit {
 
   @Input() news: News;
-  @Output() detailNews: EventEmitter<News> = new EventEmitter();
+  @Output() onDeleteNews: EventEmitter<News> = new EventEmitter();
+  firstLine: string;
+  isAdmin: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private _auth: AuthService,
+    private router: Router) {
   }
 
-  onClick(News: News){
-    this.detailNews.emit(News);
+  ngOnInit(): void {
+    this.firstLine = this.news.details.split(" ", 10).join(" ");
+    this.isAdmin = this._auth.isAdminUser();
+  }
+
+  deleteNews(news: News)
+  {
+    this.onDeleteNews.emit(news);
+  }
+
+  hasRoute(route: string) {
+    return this.router.url === route || this.router.url === '/';
   }
 
 }

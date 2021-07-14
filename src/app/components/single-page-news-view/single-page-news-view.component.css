@@ -1,0 +1,46 @@
+.addcomment{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  /* font-size: large; */
+}
+
+.container-comment {
+  max-width: 100%;
+  margin: 10px auto;
+  overflow: auto;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 4px 4px 5px red;
+    text-align: center;
+}
+
+.text-body{
+    font-size: 1.5rem;
+    color: black;
+    background-color: whitesmoke;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.text{
+    font-size: 1.5rem;
+    color: lightseagreen;
+    background-color: lightgrey;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.date{
+    text-align: center;
+    font-size: 1.5rem;
+    color: lightseagreen;
+    font-family: Helvetica, Arial, sans-serif;
+}

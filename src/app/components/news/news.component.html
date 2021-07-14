@@ -3,4 +3,5 @@
 <app-news-item
     *ngFor="let news of newses" 
     [news]="news" 
+    (onDeleteNews)="deleteNews(news)"
 ></app-news-item>

@@ -35,8 +35,7 @@ export class SinglePageNewsViewComponent implements OnInit {
     this.isLogin = this.auth.isUserLoggedIn();
   }
 
-  onFormSubmit(comment: any){
-    this.comment = comment.value.comment;
+  onSubmit(){
     if(!this.comment){
       alert('Please add a Comment!');
       return;
@@ -49,6 +48,8 @@ export class SinglePageNewsViewComponent implements OnInit {
     };
     this.news.comment?.push(newComment);
     this.newsService.updateNews(this.news).subscribe();
+
+    this.comment = '';
   }
 
 }

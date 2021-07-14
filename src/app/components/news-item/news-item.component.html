@@ -1,9 +1,15 @@
-<a [routerLink]="['/details']" [queryParams]="{'id': news.id}">
-<div  class="news" (click)="onClick(news)">
-    <h3>
-        {{ news.title }}
-        <!-- <fa-icon [ngStyle]="{color: 'red'}" [icon]="faTimes" (click)="onDelete(task)"></fa-icon> -->
+<div  class="news">
+    <h3 class="title">
+        {{ news.title }} <br>
     </h3>
-    <p>{{ news.date }}</p>
+    <div class="sub">
+        <div class="date">{{ news.date }}</div>
+        <app-button *ngIf="isAdmin && hasRoute('/')"
+            color='red' text='Delete News'
+            (btnClick)="deleteNews(news)"
+        ></app-button>
+
+    </div>
+    
+    <p class="text-body">{{firstLine}} ....... <a [routerLink]="['/details']" [queryParams]="{'id': news.id}"><small>Read More</small></a></p>
 </div>
-</a>

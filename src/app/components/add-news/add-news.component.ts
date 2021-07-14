@@ -43,7 +43,12 @@ export class AddNewsComponent implements OnInit {
       title: this.title,
       details: this.news,
       image: this.image,
-      date: this.time
+      date: this.time,
+      comment: [{
+        username:'',
+        time: '',
+        text:''
+      }]
     };
 
     this.onAddNews.emit(newNews);

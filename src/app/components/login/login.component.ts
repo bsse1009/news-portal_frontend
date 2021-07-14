@@ -29,16 +29,16 @@ export class LoginComponent implements OnInit {
     //   });
   }
 
-  onFormSubmit(loginForm: any) {
-    console.log('hey ', loginForm.value.username, loginForm.value.password);
-    this.authService.login(loginForm.value.username, loginForm.value.password).subscribe(data => {
+  onSubmit() {
+    this.authService.login(this.username, this.password).subscribe(data => {
       if (this.retUrl != null && data) {
         this.router.navigateByUrl(this.retUrl);
       } else {
         this.router.navigate(['login']);
       }
     });
-
+    this.username = '';
+    this.password = '';
   }
 
 }
