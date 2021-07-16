@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from "../../services/auth.service";
 import { Router } from '@angular/router';
 import { UiService } from '../../services/ui.service';
@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
   showAddNews: boolean = false;
   subscription: Subscription;
   isAdmin: boolean;
+  search: string = '';
+  @Output() searchKey = new EventEmitter();
 
   constructor(
       private _auth: AuthService,
@@ -45,7 +47,13 @@ export class HeaderComponent implements OnInit {
   }
 
   hasRoute(route: string) {
-    return this.router.url === route || this.router.url === '/';
+    return this.router.url !== route || this.router.url === '/';
+  }
+  
+
+  onSubmit(){
+    this.searchKey.emit(this.search);
+    this.search = '';
   }
 
 }

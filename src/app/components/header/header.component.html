@@ -1,23 +1,33 @@
 <header>
     <h1>{{ title }}</h1>
-    <app-search-bar></app-search-bar>
+    <div *ngIf="hasRoute('/')">
+        <form (ngSubmit)="onSubmit()">
+            <div>
+                <input type="text" name="search" [(ngModel)]="search" id="search" placeholder="search news" />
+                <app-button color='green' text='search'></app-button>
+            </div>
+        </form>
+    </div>
     <div *ngIf = "isLogedIn(); else login">
-        <div>
-            <app-button *ngIf="isAdmin && hasRoute('/')" color="{{ showAddNews ? 'red' : 'green' }}"
+        <div class="row">
+            <div  *ngIf="isAdmin && hasRoute('/')"><app-button color="{{ showAddNews ? 'red' : 'green' }}"
                 text="{{ showAddNews ? 'Close' : 'Add News' }}" (btnClick)="toogleAddNews()"></app-button>
+            </div>
             
-            <a [routerLink]="['/']">
-                <app-button color='red' text='Logout' (btnClick)="logOut()"></app-button>
-            </a>
+            <div>
+                <a [routerLink]="['/']">
+                    <app-button color='red' text='Logout' (btnClick)="logOut()"></app-button>
+                </a>
+            </div>  
         </div>
     </div>
     <ng-template #login>
         <div>
-            <a [routerLink]="['login']" *ngIf="hasRoute('/register')">
+            <a [routerLink]="['/login']" *ngIf="hasRoute('/login')">
                 <app-button color='green' text='login'>
                 </app-button>
             </a>
-            <a [routerLink]="['register']" *ngIf="hasRoute('/login')">
+            <a [routerLink]="['/register']" *ngIf="hasRoute('/register')">
                 <app-button color='green' text='Register'>
                 </app-button>
             </a>

@@ -31,4 +31,12 @@ export class NewsComponent implements OnInit {
       );
   }
 
+  search(searchKey: string){
+    if(searchKey !== ''){
+      this.newses = this.newses.filter((t) => t.title.includes(searchKey));
+      return;
+    } 
+    this.ngOnInit();
+  }
+
 }

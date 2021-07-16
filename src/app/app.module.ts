@@ -8,7 +8,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { NewsComponent } from './components/news/news.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { SinglePageNewsViewComponent } from './components/single-page-news-view/single-page-news-view.component';
@@ -31,7 +30,6 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     ButtonComponent,
-    SearchBarComponent,
     NewsComponent,
     NewsItemComponent,
     SinglePageNewsViewComponent,

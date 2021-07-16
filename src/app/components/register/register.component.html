@@ -1,3 +1,10 @@
+<app-header></app-header>
+<div>
+    <a [routerLink]="['/']">
+        <app-button color='green' text='Home'>
+        </app-button>
+    </a>
+</div>
 <form class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
         <label for="name">Name</label>

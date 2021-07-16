@@ -5,3 +5,17 @@ header {
   margin-bottom: 20px;
   /* font-size: large; */
 }
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input{
+  width: 65%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}

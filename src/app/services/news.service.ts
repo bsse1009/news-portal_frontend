@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { News } from "../News";
-import { Comment } from "../Comment";
 
 
 const httpOptions = {
@@ -41,6 +40,5 @@ export class NewsService {
     const url = `${this.apiUrl}/${news.id}`;
     return this.http.delete<News>(url);
   }
-
 
 }
