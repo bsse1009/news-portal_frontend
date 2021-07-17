@@ -1,0 +1,15 @@
+<form *ngIf="showUpdateNews" class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="title">Titlle</label>
+        <input type="text" name="title" [(ngModel)]="title" id="title" placeholder="Update News Title" />
+    </div>
+    <div class="form-control">
+        <label for="body">News Body</label>
+        <input type="text" name="body" [(ngModel)]="body" id="body" placeholder="Update News Body" />
+    </div>
+    <div class="form-control">
+        <label for="image">Image</label>
+        <input type="text" name="image" [(ngModel)]="image" id="image" />
+    </div>
+    <input type="submit" value="Update News" class="btn btn-block" />
+</form>

@@ -1,11 +1,18 @@
 <app-header></app-header>
 
-<div>
+<div class="row">
     <a [routerLink]="['/']">
         <app-button color='green' text='Home'>
         </app-button>
     </a>
+    <div *ngIf="isAdmin && hasRoute()">
+        <app-button color="{{ showUpdateNews ? 'red' : 'green' }}" text="{{ showUpdateNews ? 'Close' : 'Update News' }}"
+            (btnClick)="toggleUpdateNews()"></app-button>
+    </div>
 </div>
+
+<app-update-news (onUpdateNews)="updateNews($event)"></app-update-news>
+
 <div class="container">
     <h3 class="title">{{ news.title }}</h3>
     <div class="date"><small>{{ news.date }}</small></div>
