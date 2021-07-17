@@ -14,13 +14,11 @@ export class AuthService {
   users: User[] = [];
   
   constructor(private _userService: UserService) { 
-    this._userService.getUsers().subscribe((users) => {
-      console.log(users);
-      this.users = users;
-    });
+    this._userService.getUsers().subscribe((users) => this.users = users);
   }
 
   login(username: string, password: string) {
+    this._userService.getUsers().subscribe((users) => this.users = users);
     for (let i = 0; i < this.users.length; i++) {
       const user = this.users[i];
       const name = user.name;

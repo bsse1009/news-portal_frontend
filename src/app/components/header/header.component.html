@@ -23,11 +23,11 @@
     </div>
     <ng-template #login>
         <div>
-            <a [routerLink]="['/login']" *ngIf="hasRoute('/login')">
+            <a [routerLink]="['/login']" *ngIf="hasNotRoute('/login')">
                 <app-button color='green' text='login'>
                 </app-button>
             </a>
-            <a [routerLink]="['/register']" *ngIf="hasRoute('/register')">
+            <a [routerLink]="['/register']" *ngIf="hasNotRoute('/register')">
                 <app-button color='green' text='Register'>
                 </app-button>
             </a>

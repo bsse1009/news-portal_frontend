@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class NewsService {
-  apiUrl: string = 'http://localhost:5000/News';
+  apiUrl: string = 'https://localhost:5001/api/news';
 
   constructor(private http: HttpClient) { }
 

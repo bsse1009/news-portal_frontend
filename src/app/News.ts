@@ -1,7 +1,7 @@
 import { Comment } from "./Comment";
 
 export interface News {
-    id?: number;
+    id?: string;
     title: string;
     date?: string;
     details: string;

@@ -46,10 +46,13 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  hasRoute(route: string) {
-    return this.router.url !== route || this.router.url === '/';
+  hasNotRoute(route: string) {
+    return this.router.url !== route;
   }
   
+  hasRoute(route: string) {
+    return this.router.url == route;
+  }
 
   onSubmit(){
     this.searchKey.emit(this.search);

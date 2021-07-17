@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl: string = 'http://localhost:5000/users';
+  apiUrl: string = 'https://localhost:5001/api/user';
   isCorrect: boolean = false;
 
   constructor(private http: HttpClient) { }
@@ -27,7 +27,6 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]>{
-    console.log('hello');
     return this.http.get<User[]>(this.apiUrl);
   }
 
